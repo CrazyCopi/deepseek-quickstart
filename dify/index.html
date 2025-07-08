@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>经典贪吃蛇游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>贪吃蛇游戏</h1>
+        <div class="game-settings">
+            <div class="setting-group">
+                <label for="gridSize">网格大小:</label>
+                <select id="gridSize">
+                    <option value="15">15x15</option>
+                    <option value="20" selected>20x20</option>
+                    <option value="25">25x25</option>
+                </select>
+            </div>
+            <div class="setting-group">
+                <label for="gameSpeed">初始速度:</label>
+                <select id="gameSpeed">
+                    <option value="200">慢速</option>
+                    <option value="150" selected>中速</option>
+                    <option value="100">快速</option>
+                </select>
+            </div>
+            <div class="setting-group">
+                <label for="wallMode">墙壁模式:</label>
+                <select id="wallMode">
+                    <option value="solid">不可穿透</option>
+                    <option value="passable">可穿透</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="game-area">
+            <canvas id="gameCanvas"></canvas>
+            <div id="startScreen" class="screen">
+                <h2>贪吃蛇游戏</h2>
+                <p>使用方向键控制蛇的移动</p>
+                <button id="startBtn">开始游戏</button>
+            </div>
+            <div id="gameOverScreen" class="screen hidden">
+                <h2>游戏结束!</h2>
+                <p>你的分数: <span id="finalScore">0</span></p>
+                <button id="restartBtn">再玩一次</button>
+            </div>
+        </div>
+        
+        <div class="game-info">
+            <div id="scoreDisplay">分数: 0</div>
+            <div id="highScoreDisplay">最高分: 0</div>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
